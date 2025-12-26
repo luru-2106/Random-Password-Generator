@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator (RPG)</title>
+    <link rel="stylesheet" href="styels.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Password Generator (RPG)</h1>
+        <div class="generator-box">
+            <h2>Generate Strong Password</h2>
+            <form id="passwordForm">
+                <label>Password Length: <input type="number" id="length" value="12" min="6" max="50"></label><br>
+                <label><input type="checkbox" id="uppercase" checked> Uppercase Letters (A-Z)</label><br>
+                <label><input type="checkbox" id="lowercase" checked> Lowercase Letters (a-z)</label><br>
+                <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label><br>
+                <label><input type="checkbox" id="special" checked> Special Characters (!@#$%)</label><br>
+                <button type="button" onclick="generatePassword()">Generate Password</button>
+            </form>
+            <div class="result">
+                <input type="text" id="password" readonly>
+                <button onclick="copyPassword()">Copy</button>
+                <button onclick="downloadPassword()">Download</button>
+                <button onclick="savePassword()">Save</button>
+            </div>
+            <p id="suggestion" class="suggestion"></p>
+            <p id="entropy" class="entropy"></p>
+        </div>
+        <div class="saved-passwords">
+            <h2>Saved Passwords</h2>
+            <table id="passwordTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Password</th>
+                        <th>Strength</th>
+                    </tr>
+                </thead>
+                <tbody id="passwordTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+  
+    <div id="userPopup" class="popup">
+        <div class="popup-content">
+            <h2>Enter Your Details</h2>
+            <form id="userForm">
+                <label>Name: <input type="text" id="userName" required></label><br>
+                <label>Email: <input type="email" id="userEmail" required></label><br>
+                <label>Mobile (Optional): <input type="text" id="userMobile"></label><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
